@@ -1,12 +1,12 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
-driver = webdriver.Firefox()
-driver.get("http://www.python.org")
-assert "Python" in driver.title
-elem = driver.find_element_by_name("q")
-elem.clear()
-elem.send_keys("pycon")
-elem.send_keys(Keys.RETURN)
-assert "No results found." not in driver.page_source
+driver = webdriver.Chrome('./chromedriver')
+driver.get("https://www.python.org")
+print(driver.title)
+search_bar = driver.find_element_by_name("q")
+search_bar.clear()
+search_bar.send_keys("getting started with python")
+search_bar.send_keys(Keys.RETURN)
+print(driver.current_url)
 driver.close()

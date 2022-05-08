@@ -24,6 +24,6 @@ search_text = SEARCHTERM
   
 # print True if text is present else False
 print(SEARCHTERM," in the page source?\n")
-print{"TRUE or FALSE\n")
+print("TRUE or FALSE\n")
 print(search_text in get_source)
 

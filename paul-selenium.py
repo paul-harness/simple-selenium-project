@@ -3,7 +3,7 @@ from selenium import webdriver
 import os
 
 URL = os.environ.get('PLUGIN_URL')
-SEARCHTERM = 0s.environ.get('PLUGIN_SEARCHTERM')
+SEARCHTERM = os.environ.get('PLUGIN_SEARCHTERM')
 
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument('--no-sandbox')

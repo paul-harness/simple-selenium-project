@@ -23,7 +23,7 @@ get_source = driver.page_source
 search_text = SEARCHTERM
   
 # print True if text is present else False
-print('""',SEARCHTERM,'""'," in the page source of ",URL," ?\n")
+print('\n\n"',SEARCHTERM,'"'," in the page source of ",URL," ?\n")
 print("TRUE or FALSE\n")
 print(search_text in get_source)
 

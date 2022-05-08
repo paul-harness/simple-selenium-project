@@ -1,7 +1,9 @@
 # tutorial to get page source of google.com
 from selenium import webdriver
 import os
+
 URL = os.environ.get('PLUGIN_URL') 
+
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument('--no-sandbox')
 chrome_options.add_argument('--headless')

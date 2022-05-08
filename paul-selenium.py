@@ -1,11 +1,9 @@
+# tutorial to get page source of google.com
 from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
-
-chrome_opt = webdriver.ChromeOptions()
-chrome_opt.add_argument('--headless')
-chrome_opt.add_argument('--no-sandbox')
-
-driver =  webdriver.Chrome('./chromedriver', options=chrome_opt)
-driver.get("http://www.python.org")
-assert "Python" in driver.title
-driver.close()
+chrome_options = webdriver.ChromeOptions()
+chrome_options.add_argument('--no-sandbox')
+chrome_options.add_argument('--headless')
+chrome_options.add_argument('--disable-gpu')
+driver = webdriver.Chrome(chrome_options=chrome_options)
+driver.get('http://www.google.com')
+print(driver.page_source)

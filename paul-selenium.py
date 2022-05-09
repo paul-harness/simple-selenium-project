@@ -1,29 +1,68 @@
-# tutorial to get page source of google.com
+#Implementation of Selenium WebDriver with Python using PyTest
+#from https://www.lambdatest.com/blog/selenium-webdriver-with-python/
+ 
+import pytest
 from selenium import webdriver
-import os
-
-URL = os.environ.get('PLUGIN_URL')
-SEARCHTERM = os.environ.get('PLUGIN_SEARCHTERM')
-
-chrome_options = webdriver.ChromeOptions()
-chrome_options.add_argument('--no-sandbox')
-chrome_options.add_argument('--headless')
-chrome_options.add_argument('--disable-gpu')
-driver = webdriver.Chrome(chrome_options=chrome_options)
-
-# print page source for URL
-driver.get(URL)
-print(driver.page_source)
-
-# return TRUE if SEARCHTERM is in page source
-# Getting current URL source code 
-get_source = driver.page_source
-  
-# Text you want to search
-search_text = SEARCHTERM
-  
-# print True if text is present else False
-print('\n\n"',SEARCHTERM,'"',"in the page source of",URL,"?\n")
-print("TRUE or FALSE\n")
-print(search_text in get_source)
-
+import sys
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.common.keys import Keys
+from time import sleep
+ 
+def test_lambdatest_todo_app():
+    chrome_driver = webdriver.Chrome()
+    
+    chrome_driver.get('https://lambdatest.github.io/sample-todo-app/')
+    chrome_driver.maximize_window()
+ 
+    chrome_driver.find_element_by_name("li1").click()
+    chrome_driver.find_element_by_name("li2").click()
+ 
+    title = "Sample page - lambdatest.com"
+    assert title == chrome_driver.title
+ 
+    sample_text = "Happy Testing at LambdaTest"
+    email_text_field = chrome_driver.find_element_by_id("sampletodotext")
+    email_text_field.send_keys(sample_text)
+    sleep(5)
+ 
+    chrome_driver.find_element_by_id("addbutton").click()
+    sleep(5)
+ 
+    output_str = chrome_driver.find_element_by_name("li6").text
+    sys.stderr.write(output_str)
+    
+    sleep(2)
+    chrome_driver.close()
+ 
+import pytest
+from selenium import webdriver
+import sys
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.common.keys import Keys
+from time import sleep
+ 
+def test_lambdatest_todo_app():
+    chrome_driver = webdriver.Chrome()
+    
+    chrome_driver.get('https://lambdatest.github.io/sample-todo-app/')
+    chrome_driver.maximize_window()
+ 
+    chrome_driver.find_element_by_name("li1").click()
+    chrome_driver.find_element_by_name("li2").click()
+ 
+    title = "Sample page - lambdatest.com"
+    assert title == chrome_driver.title
+ 
+    sample_text = "Happy Testing at LambdaTest"
+    email_text_field = chrome_driver.find_element_by_id("sampletodotext")
+    email_text_field.send_keys(sample_text)
+    sleep(5)
+ 
+    chrome_driver.find_element_by_id("addbutton").click()
+    sleep(5)
+ 
+    output_str = chrome_driver.find_element_by_name("li6").text
+    sys.stderr.write(output_str)
+    
+    sleep(2)
+    chrome_driver.close()

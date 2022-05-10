@@ -20,7 +20,7 @@ title = "Sample page - lambdatest.com"
 assert title == driver.title
 
 sample_text = "Happy Testing at LambdaTest"
-email_text_field = chrome_driver.find_element_by_id("sampletodotext")
+email_text_field = driver.find_element_by_id("sampletodotext")
 email_text_field.send_keys(sample_text)
 sleep(5)
 

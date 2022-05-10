@@ -17,7 +17,7 @@ driver.find_element_by_name("li1").click()
 driver.find_element_by_name("li2").click()
 
 title = "Sample page - lambdatest.com"
-assert title == chrome_driver.title
+assert title == driver.title
 
 sample_text = "Happy Testing at LambdaTest"
 email_text_field = chrome_driver.find_element_by_id("sampletodotext")

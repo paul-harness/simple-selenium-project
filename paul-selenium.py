@@ -11,7 +11,7 @@ chrome_options.add_argument('--disable-gpu')
 driver = webdriver.Chrome(chrome_options=chrome_options)
 
 # print page source for URL
-driver.get(https://'lambdatest.github.io/sample-todo-app/')
+driver.get('https://lambdatest.github.io/sample-todo-app/')
 driver.maximize_window()
 driver.find_element_by_name("li1").click()
 driver.find_element_by_name("li2").click()

@@ -19,7 +19,6 @@ class FacebookLogin():
             self.driver = webdriver.Chrome(executable_path=ChromeDriverManager().install())
         elif browser == 'Firefox':
             # Set it to Firefox
-            self.driver = webdriver.Firefox(executable_path=GeckoDriverManager().install())
         self.driver.get(LOGIN_URL)
         time.sleep(1) # Wait for some time to load
  

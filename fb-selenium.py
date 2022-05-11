@@ -14,7 +14,7 @@ class FacebookLogin():
         # Store credentials for login
         self.email = email
         self.password = password
-        driver = webdriver.Chrome(executable_path=ChromeDriverManager().install())
+        driver = webdriver.Chrome(chrome_options=chrome_options)
         driver.get(LOGIN_URL)
         time.sleep(1) # Wait for some time to load
  

@@ -14,6 +14,10 @@ class FacebookLogin():
         # Store credentials for login
         self.email = email
         self.password = password
+        chrome_options = webdriver.ChromeOptions()
+        chrome_options.add_argument('--no-sandbox')
+        chrome_options.add_argument('--headless')
+        chrome_options.add_argument('--disable-gpu')
         driver = webdriver.Chrome(chrome_options=chrome_options)
         driver.get(LOGIN_URL)
         time.sleep(1) # Wait for some time to load
